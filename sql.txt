@@ -1,0 +1,84 @@
+
+--
+-- Table structure for table `wp_schedule`
+--
+
+
+--
+-- Table structure for table `wp_schedule`
+--
+
+CREATE TABLE `wp_schedule` (
+  `id` int(10) NOT NULL,
+  `learning_mode_type` varchar(64) DEFAULT NULL,
+  `schedule_date_from` date DEFAULT NULL,
+  `schedule_date_to` date DEFAULT NULL,
+  `onboarding_date` date DEFAULT NULL,
+  `schedule_time_1` varchar(64) DEFAULT NULL,
+  `schedule_time_2` varchar(64) DEFAULT NULL,
+  `schedule_time_3` varchar(64) DEFAULT NULL,
+  `total_no_of_seat` int(10) DEFAULT NULL,
+  `fee` decimal(10,2) DEFAULT NULL,
+  `status` enum('active','inactive') DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `wp_schedule`
+--
+ALTER TABLE `wp_schedule`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `wp_schedule`
+--
+ALTER TABLE `wp_schedule`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+
+
+
+CREATE TABLE `wp_booking` (
+  `id` int(11) NOT NULL,
+  `schedule_id` int(10) DEFAULT NULL,
+  `learning_mode_type` varchar(64) DEFAULT NULL,
+  `join_class_date` text DEFAULT NULL,
+  `join_class_condition` text DEFAULT NULL,
+  `start_time` varchar(127) DEFAULT NULL,
+  `start_time_condition` varchar(127) DEFAULT NULL,
+  `user_name` varchar(64) DEFAULT NULL,
+  `email` text DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `wp_booking`
+--
+ALTER TABLE `wp_booking`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `wp_booking`
+--
+ALTER TABLE `wp_booking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
